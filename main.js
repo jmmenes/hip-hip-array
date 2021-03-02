@@ -154,7 +154,6 @@ for (let i = 0; i < fibonacciNumbers.length; i++) {
 // Make a NEW array with 5 values of your choice, using the same syntax as the array creation from the
 // previous 6 challenges; that is, every value should be placed within the square brackets.
 // Now console.log out each value individually.
-
 const createdArray = ["J", "O", "H", "N", "M"];
 
 console.log("=================");
@@ -170,9 +169,45 @@ for (const item of createdArray) {
 
 // Challenge 8
 // Make a new EMPTY array and fill it with five values of your choice using BOTH .push AND .unshift, and then console.log out each value individually.
+emptyArray = [];
+
+console.log("=================");
+console.log("Challenge #8");
+console.log(
+  "Make a new EMPTY array and fill it with five values of your choice using BOTH .push AND .unshift"
+);
+
+console.log(emptyArray);
+
+console.log("push method");
+emptyArray.push(4, 5);
+console.log(emptyArray);
+
+console.log("unshift method");
+emptyArray.unshift(1, 2, 3);
+console.log(emptyArray);
+
+console.log("Log each value individually.");
+for (const item of emptyArray) {
+  console.log(item);
+}
 
 // Challenge 9
 // Loop through the `students` array from Challenge 1, starting at index 3 and ending at index 10 (INCLUSIVE), logging out each value individually.
+
+console.log("=================");
+console.log("Challenge #9");
+console.log(
+  "Loop through the `students` array from Challenge 1, starting at index 3 and ending at index 10."
+);
+
+console.log(students);
+
+console.log("Log each value individually.");
+for (let i = 3; i < students.length - 2; i++) {
+  console.log("index:", i);
+  console.log("value:", students[i]);
+}
 
 // Challenge 10
 // Loop through the `students` array from Challenge 1, making a COPY of the array, starting at index 3 and ending at index 10 (INCLUSIVE). This is very similar to string building; create a new array, loop through the old one, and put values from the original in the new one. Then log out each value of the copy indivudally.
