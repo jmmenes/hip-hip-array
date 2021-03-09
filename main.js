@@ -30,9 +30,15 @@ console.log(
 console.log(students);
 
 console.log("Log each value individually.");
-for (const item of students) {
-  console.log(item);
+for (let i = 0; i < students.length; i++) {
+  const student = students[i];
+  console.log(student);
 }
+
+// console.log("Log each value individually.");
+// for (const item of students) {
+//   console.log(item);
+// }
 
 // Challenge 2
 // Loop through the following array BACKWARDS, console.logging out each value. 64 should be
@@ -48,7 +54,7 @@ console.log(grades);
 
 // Reverse For Loop
 console.log("Log each value individually.");
-for (var i = grades.length - 1; i >= 0; i--) {
+for (let i = grades.length - 1; i >= 0; i--) {
   console.log(grades[i]);
 }
 
@@ -63,11 +69,18 @@ console.log("Log out only the even numbers in the following array.");
 console.log(positiveNumbers);
 
 console.log("Log each value individually.");
-const evens = positiveNumbers.filter((number) => number % 2 == 0);
-console.log(evens);
-for (const item of evens) {
-  console.log(item);
+for (const positiveNumber of positiveNumbers) {
+  if (positiveNumber % 2 === 0) {
+    console.log(positiveNumber);
+  }
 }
+
+// console.log("Log each value individually.");
+// const evens = positiveNumbers.filter((number) => number % 2 == 0);
+// console.log(evens);
+// for (const item of evens) {
+//   console.log(item);
+// }
 
 // Challenge 4
 // Console.log out the even numbers in the following array, INCLUDING the negative ones. There
@@ -80,13 +93,20 @@ console.log("Log out the Even Numbers. INCLUDING the negative ones.");
 
 console.log(mixedSignNumbers);
 
-const evensAndNegative = mixedSignNumbers.filter((number) => number % 2 == 0);
-console.log(evensAndNegative);
-
 console.log("Log each value individually.");
-for (const item of evensAndNegative) {
-  console.log(item);
+for (const mixedNumber of mixedSignNumbers) {
+  if (mixedNumber % 2 === 0) {
+    console.log(mixedNumber);
+  }
 }
+
+// const evensAndNegative = mixedSignNumbers.filter((number) => number % 2 == 0);
+// console.log(evensAndNegative);
+
+// console.log("Log each value individually.");
+// for (const item of evensAndNegative) {
+//   console.log(item);
+// }
 
 // Challenge 5
 // Remove two values from the beginning and one value from the end of the following array, simply by
@@ -193,7 +213,8 @@ for (const item of emptyArray) {
 }
 
 // Challenge 9
-// Loop through the `students` array from Challenge 1, starting at index 3 and ending at index 10 (INCLUSIVE), logging out each value individually.
+// Loop through the `students` array from Challenge 1, starting at index 3 and ending at index 10 (INCLUSIVE),
+// logging out each value individually.
 
 console.log("=================");
 console.log("Challenge #9");
@@ -210,10 +231,56 @@ for (let i = 3; i < students.length - 2; i++) {
 }
 
 // Challenge 10
-// Loop through the `students` array from Challenge 1, making a COPY of the array, starting at index 3 and ending at index 10 (INCLUSIVE). This is very similar to string building; create a new array, loop through the old one, and put values from the original in the new one. Then log out each value of the copy indivudally.
+// Loop through the `students` array from Challenge 1, making a COPY of the array, starting at index 3
+// and ending at index 10 (INCLUSIVE). This is very similar to string building; create a new array,
+// loop through the old one, and put values from the original in the new one. Then log out each value of
+// the copy individually.
+
+console.log("=================");
+console.log("Challenge #10");
+console.log(
+  "Loop through the `students` array from Challenge 1, making a COPY of the array, starting at index 3 and ending at index 10."
+);
+
+console.log(students);
+
+let = challenge10Array = [];
+
+console.log("Push students at i, into empty array.");
+for (let i = 3; i < students.length - 2; i++) {
+  challenge10Array.push(students[i]);
+}
+
+console.log("=============================");
+
+console.log("Log each value individually.");
+for (const value of challenge10Array) {
+  console.log(value);
+}
 
 // Challenge 11
-// Make a COPY of the `students` array *using .slice*, starting at index 3 and ending at index 10 (INCLUSIVE), then log out each value of the copy individually. THEN log out each value of the original array. Notice that the original array didn't get any values taken out of it, because `slice` does NOT modify the original array.
+// Make a COPY of the `students` array *using .slice*, starting at index 3 and ending at index 10 (INCLUSIVE),
+// then log out each value of the copy individually. THEN log out each value of the original array.
+// Notice that the original array didn't get any values taken out of it, because `slice` does NOT
+// modify the original array.
+
+console.log("=================");
+console.log("Challenge #11");
+console.log(
+  "Make a COPY of the `students` array *using .slice*, starting at index 3 and ending at index 10 (INCLUSIVE), then log out each value of the copy individually. THEN log out each value of the original array. Notice that the original array didn't get any values taken out of it, because `slice` does NOT modify the original array."
+);
+
+console.log("=================");
+const challenge11Array = students.slice(3, 11);
+console.log("Logged value of challenge11Array.");
+for (const value of challenge11Array) {
+  console.log(value);
+}
+console.log("=================");
+console.log("Logged value of original array.");
+for (const value of students) {
+  console.log(value);
+}
 
 // Challenge 12
 // Pull the items at indices 4-6 (inclusive) from the following array using .splice (NOT .slice!), then console.log out each item from the ORIGINAL array. Note that .splice DOES change the original array.
@@ -228,13 +295,65 @@ const dinosaurs = [
   "Gigantosaur",
 ];
 
+console.log("=================");
+console.log("Challenge #12");
+console.log(
+  "Pull the items at indices 4-6 (inclusive) from the following array using .splice (NOT .slice!), then console.log out each item from the ORIGINAL array. Note that .splice DOES change the original array."
+);
+console.log(dinosaurs);
+console.log("=================");
+const challenge12Items = dinosaurs.splice(4, 3);
+console.log(
+  "Logged value of original array dinosaurs with .splice(4, 3) applied."
+);
+for (const value of dinosaurs) {
+  console.log(value);
+}
+
 // Challenge 13
 // Use .join to change the dinosaur strings from the above array into one string with a '*' string as the "separator". Then console.log out that string.
+console.log("=================");
+console.log("Challenge #13");
+console.log(
+  "Use .join to change the dinosaur strings from the above array into one string with a '*' string as the 'separator'. Then console.log out that string."
+);
+console.log("=================");
+
+const str = dinosaurs.join("*");
+
+console.log(
+  "Used .join to change the strings from the previous spliced dinosaur array into 1 string."
+);
+
+console.log("=================");
+console.log("Logged string.");
+console.log(str);
 
 // Challenge 14
 // Use .reverse to reverse the dinosaur array and then log out the original array. .reverse DOES change the original array.
+console.log("=================");
+console.log("Challenge #14");
+console.log(
+  "Use .reverse to reverse the dinosaur array and then log out the original array. .reverse DOES change the original array."
+);
+console.log("=================");
+dinosaurs.reverse();
+console.log("Used .reverse() to reverse the order of the original array.");
+console.log(dinosaurs);
 
 // Challenge 15
 // Use .concat to combine the following two arrays into a NEW array you make (.concat RETURNS an array). Then console.log out each value of that new array individually. Now console.log both the primaries and secondaries arrays, noting that .concat does NOT mutate the original arrays.
 const primaries = ["red", "yellow", "blue"];
 const secondaries = ["orange", "green", "purple"];
+
+console.log("=================");
+console.log("Challenge #15");
+console.log(
+  "Use .concat to combine the following two arrays into a NEW array you make (.concat RETURNS an array). Then console.log out each value of that new array individually. Now console.log both the primaries and secondaries arrays, noting that .concat does NOT mutate the original arrays."
+);
+console.log("=================");
+const bigArray = primaries.concat(secondaries);
+
+console.log("Big array:", bigArray);
+console.log("Primary array:", primaries);
+console.log("Secondary array:", secondaries);
